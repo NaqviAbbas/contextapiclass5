@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Parent from './parent';
+import counterContext from './counterContext';
 
 function App() {
+
+  let [stat, setState] = useState(5);
+
+  let contextCounter = useState(0);
+  console.log(stat);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <counterContext.Provider value={contextCounter} >
+      <div >
+      <button onClick={() => { setState(++stat) }}>
+          increment from parent
+        </button>
+        <Parent value={stat} />
+
+        
+
+
+      </div>
+    </counterContext.Provider>
   );
 }
-
 export default App;
