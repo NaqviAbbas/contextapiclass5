@@ -11,3 +11,5 @@ in this file you can find how to use Reducer
 
 App.js
  in this file you can easily understant State hook 
+
+ for Information and help place issue I will contact you soon as possible 
